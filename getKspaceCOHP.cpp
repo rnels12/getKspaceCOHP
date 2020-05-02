@@ -49,15 +49,8 @@ int main(int argc, char* argv[]){
 	return 0;
     }
 
-    // string atom1, atom2;
-    // string bf1, bf2;
     string mu = argv[1]; mu += '_'; mu += argv[2];
     string nu = argv[3]; nu += '_'; nu += argv[4];
-    // string mu("As2 4p_y"), nu("Ga1 4s");    
-    // cout << mu << ' ' << nu << endl;
-    // return 0;
-
-    // cerr << "arc = " << argc << ' ' << argv[5] << endl;
 
     for(int ifb=5; ifb < argc; ++ifb) {
 	ifstream bsfile( argv[ifb] );
@@ -104,9 +97,6 @@ int main(int argc, char* argv[]){
 		if (!foo.empty()) basisF.push_back(foo);
 	    }
 	}
-	// for (vector<string>:: iterator it=basisF.begin(); it != basisF.end(); ++it)
-	//     cout << *it << endl;
-	// cout << "bF size = " << basisF.size() << endl;
 
 	int norb = basisF.size();	
 	// getting orbital mu index
@@ -182,7 +172,6 @@ int main(int argc, char* argv[]){
 
 	cout << endl;
     } //for ifb
-
     
     return 0;
 }
