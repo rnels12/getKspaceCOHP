@@ -78,7 +78,8 @@ int main(int argc, char* argv[]){
 	ss >> kpt_prev(0) >> kpt_prev(1) >> kpt_prev(2);
 
 	double kcoord(0);
-	cout << kcoord << ' ' << eval << ' ';
+	cout << kpt_prev.transpose() << ' '
+	     << kcoord << ' ' << eval << ' ';
 
 	getline(bsfile, line);
 	ss.str(string()); ss.str(line); ss.clear();
@@ -107,7 +108,6 @@ int main(int argc, char* argv[]){
 	    return 0;
 	}
 	int imu = distance(basisF.begin(),itBF);
-	// cout << "index = " << imu << endl;
 
 	// getting orbital nu index
 	itBF = find(basisF.begin(), basisF.end(), nu);
@@ -117,7 +117,6 @@ int main(int argc, char* argv[]){
 	    return 0;
 	}
 	int inu = distance(basisF.begin(),itBF);
-	// cout << "index = " << inu << endl;
 
 	//getting the value for the first kpt
 	for (int i = 0; i <= imu; ++i) getline(bsfile, line);
@@ -145,8 +144,9 @@ int main(int argc, char* argv[]){
 		ss >> trash >> trash >> trash >> trash;
 		ss >> kpt(0) >> kpt(1) >> kpt(2);
 		
-		kcoord +=  abs(kpt.norm()-kpt_prev.norm());
-		cout << kcoord << ' ' << eval << ' ';
+		kcoord +=  (kpt-kpt_prev).norm();
+		cout << kpt.transpose() << ' ' 
+		     << kcoord << ' ' << eval << ' ';
 		kpt_prev = kpt;		
 	    }
 	    else if (keyword == "basisfunction") {
