@@ -15,3 +15,15 @@ where "Xth" is the band index.
 
 The result will be output to the stdout. 
 
+In kspace_example, you can find an example of input files. By using the following command in that directory:
+
+/getKspaceCOHP.x F1 2s F1 2p_y KspaceCOHPBand*.lobster > foo
+
+You will get the output in the file foo consisting of six columns: 
+the first three columns represent the k-point fractional coordinates, the fourth the x axis points of the plot,
+and the fifth the eigenvalues, and the sixth the COHP.
+
+You can plot the data in foo with the gnuplot script included in the example directory. 
+Feel free to modify the script further as you see fit.
+
+
