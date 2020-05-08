@@ -23,7 +23,7 @@ You will get the output in the file foo consisting of six columns:
 the first three columns represent the k-point fractional coordinates, the fourth the x axis points of the plot,
 and the fifth the eigenvalues, and the sixth the COHP.
 
-You can plot the data in foo with the gnuplot script included in the example directory. 
-Feel free to modify the script further as you see fit.
+You can plot the data in foo with the gnuplot script included in the example directory. The output will be an eps file called "foo.eps".
+And you can see the plot with, for instance, gv. Feel free to modify the script further as you see fit.
 
 
